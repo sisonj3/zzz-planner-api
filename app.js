@@ -2,6 +2,7 @@ const express = require('express');
 const session = require('express-session');
 const passport = require('passport');
 const dotenv = require('dotenv').config();
+const cors = require('cors');
 
 const app = express();
 
@@ -13,6 +14,14 @@ const accountRouter = require('./routes/accountRouter');
 const loginRouter = require('./routes/loginRouter');
 
 app.set('trust proxy', true);
+
+// Credentials
+var corsOptions = {
+    origin: 'http://localhost:5173',
+    credentials: true
+};
+
+app.use(cors(corsOptions));
 
 // Header settings
 app.use(function (req, res, next) {
