@@ -43,6 +43,8 @@ passport.deserializeUser(async (username, done) => {
     try {
         const user = await query.getUserByUsername(username);
 
+        console.log(user);
+
         done(null, user);
     } catch (error) {
         done(error);
