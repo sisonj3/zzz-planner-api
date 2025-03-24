@@ -2,7 +2,6 @@ const express = require('express');
 const session = require('express-session');
 const passport = require('passport');
 const dotenv = require('dotenv').config();
-const cors = require('cors');
 
 const app = express();
 
@@ -15,14 +14,6 @@ const loginRouter = require('./routes/loginRouter');
 
 app.set('trust proxy', true);
 
-// Credentials
-var corsOptions = {
-    origin: 'http://localhost:5173',
-    credentials: true
-};
-
-app.use(cors(corsOptions));
-
 // Header settings
 app.use(function (req, res, next) {
     
@@ -31,6 +22,8 @@ app.use(function (req, res, next) {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
 
     res.setHeader('Access-Control-Allow-Headers', 'content-type, authorization');
+
+    res.setHeader('Access-Control-Allow-Credentials', true);
 
     next();
 });
