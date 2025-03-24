@@ -1,0 +1,90 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id Int @id @default(autoincrement())
+  username String @unique @db.VarChar(255)
+  password String @db.VarChar(255)
+  account Account?
+}
+
+model Account {
+  id Int @id @default(autoincrement())
+  user User @relation(fields: [userId], references: [id])
+  userId Int @unique
+  name String @db.VarChar(255)
+  units Json
+  wengines Json
+  loadouts Json
+  inventory Json
+}
+
+model Character {
+  id Int @id @default(autoincrement())
+  name String @unique @db.VarChar(255)
+  rank Rank
+  role Role
+  attribute Attribute
+  weekly Weekly
+  expert Expert
+}
+
+model Wengine {
+  id Int @id @default(autoincrement())
+  name String @unique @db.VarChar(255)
+  rank Rank
+  role Role
+}
+
+enum Attribute {
+  FIRE
+  ICE
+  ELECTRIC
+  ETHER
+  PHYSICAL
+}
+
+enum Role {
+  ATTACK
+  ANOMALY
+  STUN
+  SUPPORT
+  DEFENDER
+}
+
+enum Rank {
+  S
+  A
+  B
+}
+
+enum Weekly {
+  Ferocious_Grip
+  Living_Drive
+  Finale_Dance_Shoes
+  Scarlet_Engine
+  Sycophants_Refinement
+}
+
+enum Expert {
+  Murderous_Obituary
+  Crimson_Awe
+  Ethereal_Pursuit
+  Steel_Malice
+  Destructive_Advance
+  Falling_Fist
+  Stealth_Phantom
+  Thunderous_Dragon
+}
