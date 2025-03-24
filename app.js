@@ -12,6 +12,8 @@ const userRouter = require('./routes/userRouter');
 const accountRouter = require('./routes/accountRouter');
 const loginRouter = require('./routes/loginRouter');
 
+app.set('trust proxy', true);
+
 // Header settings
 app.use(function (req, res, next) {
     
