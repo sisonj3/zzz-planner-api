@@ -59,7 +59,7 @@ const loginUser = (req, res, next) => {
         failWithError: true,
     }, 
         (err, user, options) => {
-
+            console.log(options);
             console.log(user);
             
         if (user == false || user == undefined) {
