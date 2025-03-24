@@ -59,13 +59,14 @@ const loginUser = (req, res, next) => {
         failWithError: true,
     }, 
         (err, user, options) => {
+
+            console.log(user);
             
         if (user == false) {
             console.log("No user");
             return res.status(401).send(options);
         } else {
             console.log("User exists");
-            console.log(user);
             req.user = user;
             next();
         }
