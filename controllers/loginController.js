@@ -62,7 +62,7 @@ const loginUser = (req, res, next) => {
 
             console.log(user);
             
-        if (user == false) {
+        if (user == false || user == undefined) {
             console.log("No user");
             return res.status(401).send(options);
         } else {
