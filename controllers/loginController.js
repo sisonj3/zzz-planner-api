@@ -65,6 +65,7 @@ const loginUser = (req, res, next) => {
             return res.status(401).send(options);
         } else {
             console.log("User exists");
+            console.log(user);
             req.user = user;
             next();
         }
