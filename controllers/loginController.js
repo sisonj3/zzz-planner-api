@@ -10,6 +10,7 @@ passport.use(new LocalStrategy({ passReqToCallback: true }, async (req, username
     try {
         const user = await query.getUserByUsername(username);
 
+        console.log("Check credentials");
         console.log(user);
 
         // Clear messages
