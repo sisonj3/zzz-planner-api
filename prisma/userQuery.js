@@ -1,16 +1,7 @@
 const { PrismaClient, Prisma } = require('@prisma/client');
 const inventoryJson = require('./template/inventoryJson');
-const { Client } = require('pg');
 
-//const prisma = new PrismaClient();
-
-const prisma = new Client({
-    user: process.env.USERNAME,
-    password: process.env.PASSWORD,
-    host: process.env.HOSTNAME,
-    port: process.env.PORT,
-    database: process.env.DATABASE,
-});
+const prisma = new PrismaClient();
 
 // Create user with account
 async function createUser(username, password) {
@@ -43,41 +34,14 @@ async function getUsers() {
 
 // Get user by username
 async function getUserByUsername(username) {
-
-    let user = undefined;
-
-    prisma.connect()
-        .then(() => {
-            console.log("Connected to PSQL DB");
-
-            prisma.query(`SELECT * FROM "User" WHERE username=${username}`, (err, result) => {
-                if (err) {
-                    console.error('Error executing query', err);
-                } else {
-                    console.log(result.rows);
-                }
-            })
-
-            prisma.end()
-                .then(() => {
-                    console.log("Connection to PSQL Closed");
-                })
-                .catch((err) => {
-                    console.error('Error closing connection', err);
-            })
-        })
-        .catch((err) => {
-            console.error('Error connecting to PSQL Database', err);
-    })
-
-    // const user = await prisma.user.findUnique({
-    //     where: {
-    //         username: username,
-    //     },
-    //     include: {
-    //         account: true,
-    //     },
-    // });
+    const user = await prisma.user.findUnique({
+        where: {
+            username: username,
+        },
+        include: {
+            account: true,
+        },
+    });
 
     return user;
 }
