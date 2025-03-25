@@ -2,8 +2,18 @@ const express = require('express');
 const session = require('express-session');
 const passport = require('passport');
 const dotenv = require('dotenv').config();
+const { Client } = require('pg');
 
 const app = express();
+
+// PSQL Settings
+// const client = new Client({
+//     user: process.env.USERNAME,
+//     password: process.env.PASSWORD,
+//     host: process.env.HOSTNAME,
+//     port: process.env.PORT,
+//     database: process.env.DATABASE,
+// });
 
 // Router constants
 const characterRouter = require('./routes/characterRouter');
