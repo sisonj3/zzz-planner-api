@@ -44,9 +44,19 @@ async function getUsers() {
 // Get user by username
 async function getUserByUsername(username) {
 
+    let user = undefined;
+
     prisma.connect()
         .then(() => {
             console.log("Connected to PSQL DB");
+
+            prisma.query(`SELECT * FROM "User" WHERE username=${username}`, (err, result) => {
+                if (err) {
+                    console.error('Error executing query', err);
+                } else {
+                    console.log(result.rows);
+                }
+            })
 
             prisma.end()
                 .then(() => {
@@ -69,7 +79,7 @@ async function getUserByUsername(username) {
     //     },
     // });
 
-    // return user;
+    return user;
 }
 
 // Update user
