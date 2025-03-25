@@ -55,6 +55,9 @@ async function getUserByUsername(username) {
                 .catch((err) => {
                     console.error('Error closing connection', err);
             })
+        })
+        .catch((err) => {
+            console.error('Error connecting to PSQL Database', err);
     })
 
     // const user = await prisma.user.findUnique({
