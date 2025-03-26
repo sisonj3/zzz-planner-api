@@ -4,7 +4,7 @@ services:
     runtime: node
     plan: free
     envVars:
-      - key: DATABASE_URL
+      - key: RENDER_URL
         fromDatabase:
           name: zzz_planner_orm_db
           property: connectionString
