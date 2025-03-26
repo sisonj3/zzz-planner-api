@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: zzz-planner
+    runtime: node
+    plan: free
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: zzz_planner_orm_db
+          property: connectionString
+    region: oregon # optional: customize this region
+    buildCommand: npm install --production=false
+    startCommand: npm run start
+    preDeployCommand: npx prisma migrate deploy; npx prisma db seed
+
+databases:
+  - name: zzz_planner_orm_db
+    databaseName: zzz_planner_db
+    user: zzz_planner_db_user
+    plan: free
+    region: oregon
+    ipAllowList:
+      - source: 0.0.0.0/0
+        description: everywhere
+    postgresMajorVersion: "16"
+
+version: "1"
