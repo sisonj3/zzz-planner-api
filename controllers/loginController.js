@@ -11,7 +11,6 @@ passport.use(new LocalStrategy({ passReqToCallback: true }, async (req, username
         const user = await query.getUserByUsername(username);
 
         console.log("Check credentials");
-        console.log(user);
 
         // Clear messages
         req.session.messages = undefined;
@@ -44,7 +43,7 @@ passport.deserializeUser(async (username, done) => {
     try {
         const user = await query.getUserByUsername(username);
 
-        console.log(user);
+        // console.log(user);
 
         done(null, user);
     } catch (error) {
@@ -62,8 +61,8 @@ const loginUser = (req, res, next) => {
         failWithError: true,
     }, 
         (err, user, options) => {
-            console.log(options);
-            console.log(user);
+            // console.log(options);
+            // console.log(user);
             
         if (user == false || user == undefined) {
             console.log("No user");
