@@ -78,7 +78,7 @@ const loginUser = (req, res, next) => {
 const getJWT = (req, res) => {
     jwt.sign({ user: req.user }, process.env.SECRET, { expiresIn: '12h' }, (err, token) => {
         console.log("Getting JWT");
-        console.log(req.user);
+        console.log(req.user.account);
         
         res.status(200).json({
             token: token,
