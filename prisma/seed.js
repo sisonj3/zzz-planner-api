@@ -1,6 +1,7 @@
 const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
+const seedCeci = require('./seedCeci');
 const seedCharacters = require('./characterSeed');
 const seedWengines = require('./wengineSeed');
 
@@ -12,6 +13,9 @@ async function main() {
 
     // Delete all users
     await prisma.user.deleteMany({});
+
+    // Seed ceci
+    seedCeci();
     
     // Seed all characters
     seedCharacters();
