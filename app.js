@@ -27,7 +27,7 @@ app.set('trust proxy', true);
 // Header settings
 app.use(function (req, res, next) {
     
-    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+    res.setHeader('Access-Control-Allow-Origin', ['http://localhost:5173', 'https://zzz-planner.onrender.com']);
 
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
 
