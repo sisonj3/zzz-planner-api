@@ -257,6 +257,16 @@ async function seedWengines() {
         },
     });
 
+    const boxCutter = await prisma.wengine.upsert({
+        where: { name: 'Box Cutter' },
+        update: {},
+        create: {
+            name: 'Box Cutter',
+            rank: Rank.A,
+            role: Role.STUN,
+        },
+    });
+
     const sixShooter = await prisma.wengine.upsert({
         where: { name: 'Six Shooter' },
         update: {},
@@ -458,6 +468,26 @@ async function seedWengines() {
         },
     });
 
+    const severedInnocence = await prisma.wengine.upsert({
+        where: { name: 'Severed Innocence' },
+        update: {},
+        create: {
+            name: 'Severed Innocence',
+            rank: Rank.S,
+            role: Role.ATTACK,
+        },
+    });
+
+    const myriadEclips = await prisma.wengine.upsert({
+        where: { name: 'Myriad Eclipse' },
+        update: {},
+        create: {
+            name: 'Myriad Eclipse',
+            rank: Rank.S,
+            role: Role.ATTACK,
+        },
+    });
+
     const hellfireGears = await prisma.wengine.upsert({
         where: { name: 'Hellfire Gears' },
         update: {},
@@ -493,6 +523,16 @@ async function seedWengines() {
         update: {},
         create: {
             name: 'Ice-Jade Teapot',
+            rank: Rank.S,
+            role: Role.STUN,
+        },
+    });
+
+    const spectralGaze = await prisma.wengine.upsert({
+        where: { name: 'Spectral Gaze' },
+        update: {},
+        create: {
+            name: 'Spectral Gaze',
             rank: Rank.S,
             role: Role.STUN,
         },
@@ -543,6 +583,16 @@ async function seedWengines() {
         update: {},
         create: {
             name: 'Sharpened Stinger',
+            rank: Rank.S,
+            role: Role.ANOMALY,
+        },
+    });
+
+    const flightOfFancy = await prisma.wengine.upsert({
+        where: { name: 'Flight of Fancy' },
+        update: {},
+        create: {
+            name: 'Flight of Fancy',
             rank: Rank.S,
             role: Role.ANOMALY,
         },

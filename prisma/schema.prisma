@@ -87,4 +87,5 @@ enum Expert {
   Falling_Fist
   Stealth_Phantom
   Thunderous_Dragon
+  Mortal_Cleave
 }

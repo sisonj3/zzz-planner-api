@@ -123,6 +123,19 @@ async function seedCharacters() {
         },
     });
 
+    const pulchra = await prisma.character.upsert({
+        where: { name: 'Pulchra' },
+        update: {},
+        create: {
+            name: 'Pulchra',
+            rank: Rank.A,
+            role: Role.STUN,
+            attribute: Attribute.PHYSICAL,
+            weekly: Weekly.Scarlet_Engine,
+            expert: Expert.Stealth_Phantom,
+        },
+    });
+
     const soukaku = await prisma.character.upsert({
         where: { name: 'Soukaku' },
         update: {},
@@ -345,6 +358,32 @@ async function seedCharacters() {
         },
     });
 
+    const trigger = await prisma.character.upsert({
+        where: { name: 'Trigger' },
+        update: {},
+        create: {
+            name: 'Trigger',
+            rank: Rank.S,
+            role: Role.STUN,
+            attribute: Attribute.ELECTRIC,
+            weekly: Weekly.Ferocious_Grip,
+            expert: Expert.Mortal_Cleave,
+        },
+    });
+
+    const sanby = await prisma.character.upsert({
+        where: { name: 'Soldier 0 Anby' },
+        update: {},
+        create: {
+            name: 'Soldier 0 Anby',
+            rank: Rank.S,
+            role: Role.ATTACK,
+            attribute: Attribute.ELECTRIC,
+            weekly: Weekly.Living_Drive,
+            expert: Expert.Mortal_Cleave,
+        },
+    });
+
     const astra = await prisma.character.upsert({
         where: { name: 'Astra Yao' },
         update: {},
@@ -370,7 +409,33 @@ async function seedCharacters() {
             expert: Expert.Steel_Malice,
         },
     });
+
+    const vivian = await prisma.character.upsert({
+        where: { name: 'Vivian' },
+        update: {},
+        create: {
+            name: 'Vivian',
+            rank: Rank.S,
+            role: Role.ANOMALY,
+            attribute: Attribute.ETHER,
+            weekly: Weekly.Sycophants_Refinement,
+            expert: Expert.Thunderous_Dragon,
+        },
+    });
     
+    const hugo = await prisma.character.upsert({
+        where: { name: 'Hugo Vlad' },
+        update: {},
+        create: {
+            name: 'Hugo Vlad',
+            rank: Rank.S,
+            role: Role.ATTACK,
+            attribute: Attribute.ICE,
+            weekly: Weekly.Finale_Dance_Shoes,
+            expert: Expert.Murderous_Obituary,
+        },
+    });
+
     console.log("Done!");
 }
 
