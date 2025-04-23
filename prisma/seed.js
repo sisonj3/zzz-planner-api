@@ -15,7 +15,7 @@ async function main() {
     await prisma.user.deleteMany({});
 
     // Seed ceci
-    seedCeci();
+    //seedCeci();
     
     // Seed all characters
     seedCharacters();
