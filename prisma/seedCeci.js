@@ -20,10 +20,10 @@ async function seedCeci() {
             data: {
                 userId: user.id,
                 name: process.env.USERNAME,
-                units: process.env.UNITS,
-                wengines: process.env.WENGINES,
-                loadouts: process.env.LOADOUTS,
-                inventory: process.env.INVENTORY,
+                units: JSON.stringify(process.env.UNITS),
+                wengines: JSON.stringify(process.env.WENGINES),
+                loadouts: JSON.stringify(process.env.LOADOUTS),
+                inventory: JSON.stringify(process.env.INVENTORY),
             },
         });
     });

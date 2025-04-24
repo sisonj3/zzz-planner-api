@@ -72,6 +72,7 @@ const inventory = [
     new item("Falling Fist", 0, 0),
     new item("Stealth Phantom", 0, 0),
     new item("Thunderous Dragon", 0, 0),
+    new item("Mortal Cleave", 0, 0),
     // XP
     new item("Trainee Investigator Log", 0, 0),
     new item("Official Investigator Log", 0, 0),
