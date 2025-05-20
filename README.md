@@ -9,12 +9,12 @@ This is a REST API, for my Zenless Zone Zero progress tracker. Its main function
 3.Run the build command: npm install <br />
 4.Set Up your PSQL Database and PrismaORM <br />
 5.Set up PSQL url <br />
-a.In an env file create an environment variable to hold your url <br />
-![plot](./Prisma_Screenshot.png)
-b.In schema.prisma located in /zzz-planner-api/prisma enter your url. Replace env("RENDER_URL") if needed. <br />
+&emsp;a.In an env file create an environment variable to hold your url <br />
+&emsp;![plot](./Prisma_Screenshot.png) <br />
+&emsp;b.In schema.prisma located in /zzz-planner-api/prisma enter your url. Replace env("RENDER_URL") if needed. <br />
 6.Run the following commands: <br />
-a.npx prisma generate <br />
-b.npx prisma migrate dev --name init <br />
+&emsp;a.npx prisma generate <br />
+&emsp;b.npx prisma migrate dev --name init <br />
 7.Seed the database: npx prisma db seed <br />
 8.Return to /zzz-planner-api/ <br />
 9.Run the API: node app.js <br />
