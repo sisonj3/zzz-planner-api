@@ -29,17 +29,17 @@ model Character {
   id        Int       @id @default(autoincrement())
   name      String    @unique @db.VarChar(255)
   rank      Rank
-  role      Role
+  role      String @db.VarChar(255)
   attribute Attribute
-  weekly    Weekly
-  expert    Expert
+  weekly    String @db.VarChar(255)
+  expert    String @db.VarChar(255)
 }
 
 model Wengine {
   id   Int    @id @default(autoincrement())
   name String @unique @db.VarChar(255)
   rank Rank
-  role Role
+  role String @db.VarChar(255)
 }
 
 enum Attribute {
@@ -50,39 +50,8 @@ enum Attribute {
   PHYSICAL
 }
 
-enum Role {
-  ATTACK
-  ANOMALY
-  STUN
-  SUPPORT
-  DEFENDER
-  RUPTURE
-}
-
 enum Rank {
   S
   A
   B
-}
-
-enum Weekly {
-  Ferocious_Grip
-  Living_Drive
-  Finale_Dance_Shoes
-  Scarlet_Engine
-  Sycophants_Refinement
-  Exuvia_of_Refinement
-}
-
-enum Expert {
-  Murderous_Obituary
-  Crimson_Awe
-  Ethereal_Pursuit
-  Steel_Malice
-  Destructive_Advance
-  Falling_Fist
-  Stealth_Phantom
-  Thunderous_Dragon
-  Mortal_Cleave
-  Miasmic_Elytron
 }

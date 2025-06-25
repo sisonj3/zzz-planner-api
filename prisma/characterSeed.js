@@ -1,6 +1,37 @@
-const { PrismaClient, Attribute, Role, Rank, Weekly, Expert } = require('@prisma/client');
+const { PrismaClient, Attribute, Rank } = require('@prisma/client');
 
 const prisma = new PrismaClient();
+
+const Role = Object.freeze({
+    ATTACK: "ATTACK",
+    STUN: "STUN",
+    ANOMALY: "ANOMALY",
+    SUPPORT: "SUPPORT",
+    DEFENDER: "DEFENDER",
+    RUPTURE: "RUPTURE",
+});
+
+const Weekly = Object.freeze({
+    Ferocious_Grip: "Ferocious_Grip",
+    Living_Drive: "Living_Drive",
+    Finale_Dance_Shoes: "Finale_Dance_Shoes",
+    Scarlet_Engine: "Scarlet_Engine",
+    Sycophants_Refinement: "Sycophants_Refinement",
+    Exuvia_of_Refinement: "Exuvia_of_Refinement",
+});
+
+const Expert = Object.freeze({
+    Murderous_Obituary: "Murderous_Obituary",
+    Crimson_Awe: "Crimson_Awe",
+    Ethereal_Pursuit: "Ethereal_Pursuit",
+    Steel_Malice: "Steel_Malice",
+    Destructive_Advance: "Destructive_Advance",
+    Falling_Fist: "Falling_Fist",
+    Stealth_Phantom: "Stealth_Phantom",
+    Thunderous_Dragon: "Thunderous_Dragon",
+    Mortal_Cleave: "Mortal_Cleave",
+    Miasmic_Elytron: "Miasmic_Elytron",
+});
 
 async function seedCharacters() {
     console.log("Seeding Characters...");
@@ -446,6 +477,32 @@ async function seedCharacters() {
             attribute: Attribute.ICE,
             weekly: Weekly.Finale_Dance_Shoes,
             expert: Expert.Murderous_Obituary,
+        },
+    });
+
+    const yixuan = await prisma.character.upsert({
+        where: { name: 'Yixuan' },
+        update: {},
+        create: {
+            name: 'Yixuan',
+            rank: Rank.S,
+            role: Role.RUPTURE,
+            attribute: Attribute.ETHER,
+            weekly: Weekly.Exuvia_of_Refinement,
+            expert: Expert.Miasmic_Elytron,
+        },
+    });
+
+    const juFufu = await prisma.character.upsert({
+        where: { name: 'Ju Fufu' },
+        update: {},
+        create: {
+            name: 'Ju Fufu',
+            rank: Rank.S,
+            role: Role.STUN,
+            attribute: Attribute.FIRE,
+            weekly: Weekly.Exuvia_of_Refinement,
+            expert: Expert.Miasmic_Elytron,
         },
     });
 

@@ -2,16 +2,7 @@
 CREATE TYPE "Attribute" AS ENUM ('FIRE', 'ICE', 'ELECTRIC', 'ETHER', 'PHYSICAL');
 
 -- CreateEnum
-CREATE TYPE "Role" AS ENUM ('ATTACK', 'ANOMALY', 'STUN', 'SUPPORT', 'DEFENDER', 'RUPTURE');
-
--- CreateEnum
 CREATE TYPE "Rank" AS ENUM ('S', 'A', 'B');
-
--- CreateEnum
-CREATE TYPE "Weekly" AS ENUM ('Ferocious_Grip', 'Living_Drive', 'Finale_Dance_Shoes', 'Scarlet_Engine', 'Sycophants_Refinement', 'Exuvia_of_Refinement');
-
--- CreateEnum
-CREATE TYPE "Expert" AS ENUM ('Murderous_Obituary', 'Crimson_Awe', 'Ethereal_Pursuit', 'Steel_Malice', 'Destructive_Advance', 'Falling_Fist', 'Stealth_Phantom', 'Thunderous_Dragon', 'Mortal_Cleave', 'Miasmic_Elytron');
 
 -- CreateTable
 CREATE TABLE "User" (
@@ -40,10 +31,10 @@ CREATE TABLE "Character" (
     "id" SERIAL NOT NULL,
     "name" VARCHAR(255) NOT NULL,
     "rank" "Rank" NOT NULL,
-    "role" "Role" NOT NULL,
+    "role" VARCHAR(255) NOT NULL,
     "attribute" "Attribute" NOT NULL,
-    "weekly" "Weekly" NOT NULL,
-    "expert" "Expert" NOT NULL,
+    "weekly" VARCHAR(255) NOT NULL,
+    "expert" VARCHAR(255) NOT NULL,
 
     CONSTRAINT "Character_pkey" PRIMARY KEY ("id")
 );
@@ -53,7 +44,7 @@ CREATE TABLE "Wengine" (
     "id" SERIAL NOT NULL,
     "name" VARCHAR(255) NOT NULL,
     "rank" "Rank" NOT NULL,
-    "role" "Role" NOT NULL,
+    "role" VARCHAR(255) NOT NULL,
 
     CONSTRAINT "Wengine_pkey" PRIMARY KEY ("id")
 );

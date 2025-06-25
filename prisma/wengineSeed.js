@@ -1,6 +1,15 @@
-const { PrismaClient, Role, Rank } = require('@prisma/client');
+const { PrismaClient, Rank } = require('@prisma/client');
 
 const prisma = new PrismaClient();
+
+const Role = Object.freeze({
+    ATTACK: "ATTACK",
+    STUN: "STUN",
+    ANOMALY: "ANOMALY",
+    SUPPORT: "SUPPORT",
+    DEFENDER: "DEFENDER",
+    RUPTURE: "RUPTURE",
+});
 
 async function seedWengines() {
     console.log('Seeding W-engines...');
