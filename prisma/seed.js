@@ -1,9 +1,9 @@
 const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
-const seedCeci = require('./seedCeci');
-const seedCharacters = require('./characterSeed');
-const seedWengines = require('./wengineSeed');
+// const seedCeci = require('./seedCeci');
+// const seedCharacters = require('./characterSeed');
+// const seedWengines = require('./wengineSeed');
 
 async function main() {
     console.log("Seeding...");
@@ -18,10 +18,10 @@ async function main() {
     // seedCeci();
     
     // Seed all characters
-    seedCharacters();
+    // seedCharacters();
     
     // Seed all wengines
-    seedWengines();
+    // seedWengines();
 
     console.log("Done!");
 }
