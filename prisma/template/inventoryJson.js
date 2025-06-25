@@ -41,6 +41,9 @@ const inventory = [
     new item("Basic Defense Certification Seal", 0, 0),
     new item("Advanced Defense Certification Seal", 0, 0),
     new item("Defender Certification Seal", 0, 0),
+    new item("Basic Rupture Certification Seal", 0, 0),
+    new item("Advanced Rupture Certification Seal", 0, 0),
+    new item("Arbiter Certification Seal", 0, 0),
     // Weapons
     new item("Attack Component", 0, 0),
     new item("Reinforced Attack Component", 0, 0),
@@ -57,12 +60,16 @@ const inventory = [
     new item("Defense Component", 0, 0),
     new item("Reinforced Defense Component", 0, 0),
     new item("Specialized Defense Component", 0, 0),
+    new item("Rupture Component", 0, 0),
+    new item("Reinforced Rupture Component", 0, 0),
+    new item("Specialized Rupture Component", 0, 0),
     // Weekly
     new item("Ferocious Grip", 0, 0),
     new item("Living Drive", 0, 0),
     new item("Finale Dance Shoes", 0, 0),
     new item("Scarlet Engine", 0, 0),
     new item("Sycophant's Refinement", 0, 0),
+    new item("Exuvia of Refinement", 0, 0),
     // Expert Challenge
     new item("Murderous Obituary", 0, 0),
     new item("Crimson Awe", 0, 0),
@@ -73,6 +80,7 @@ const inventory = [
     new item("Stealth Phantom", 0, 0),
     new item("Thunderous Dragon", 0, 0),
     new item("Mortal Cleave", 0, 0),
+    new item("Miasmic Elytron", 0, 0),
     // XP
     new item("Trainee Investigator Log", 0, 0),
     new item("Official Investigator Log", 0, 0),
