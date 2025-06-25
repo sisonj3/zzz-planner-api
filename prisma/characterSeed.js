@@ -149,6 +149,19 @@ async function seedCharacters() {
         },
     });
 
+    const panYinhu = await prisma.character.upsert({
+        where: { name: 'Pan Yinhu' },
+        update: {},
+        create: {
+            name: 'Pan Yinhu',
+            rank: Rank.A,
+            role: Role.DEFENDER,
+            attribute: Attribute.PHYSICAL,
+            weekly: Weekly.Exuvia_of_Refinement,
+            expert: Expert.Miasmic_Elytron,
+        },
+    });
+
     // S Ranks
     const nekomata = await prisma.character.upsert({
         where: { name: 'Nekomata' },
