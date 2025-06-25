@@ -1,37 +1,37 @@
-const { PrismaClient, Attribute, Rank } = require('@prisma/client');
+const { PrismaClient, Attribute, Rank, Role, Weekly, Expert} = require('@prisma/client');
 
 const prisma = new PrismaClient();
 
-const Role = Object.freeze({
-    ATTACK: "ATTACK",
-    STUN: "STUN",
-    ANOMALY: "ANOMALY",
-    SUPPORT: "SUPPORT",
-    DEFENDER: "DEFENDER",
-    RUPTURE: "RUPTURE",
-});
+// const Role = Object.freeze({
+//     ATTACK: "ATTACK",
+//     STUN: "STUN",
+//     ANOMALY: "ANOMALY",
+//     SUPPORT: "SUPPORT",
+//     DEFENDER: "DEFENDER",
+//     RUPTURE: "RUPTURE",
+// });
 
-const Weekly = Object.freeze({
-    Ferocious_Grip: "Ferocious_Grip",
-    Living_Drive: "Living_Drive",
-    Finale_Dance_Shoes: "Finale_Dance_Shoes",
-    Scarlet_Engine: "Scarlet_Engine",
-    Sycophants_Refinement: "Sycophants_Refinement",
-    Exuvia_of_Refinement: "Exuvia_of_Refinement",
-});
+// const Weekly = Object.freeze({
+//     Ferocious_Grip: "Ferocious_Grip",
+//     Living_Drive: "Living_Drive",
+//     Finale_Dance_Shoes: "Finale_Dance_Shoes",
+//     Scarlet_Engine: "Scarlet_Engine",
+//     Sycophants_Refinement: "Sycophants_Refinement",
+//     Exuvia_of_Refinement: "Exuvia_of_Refinement",
+// });
 
-const Expert = Object.freeze({
-    Murderous_Obituary: "Murderous_Obituary",
-    Crimson_Awe: "Crimson_Awe",
-    Ethereal_Pursuit: "Ethereal_Pursuit",
-    Steel_Malice: "Steel_Malice",
-    Destructive_Advance: "Destructive_Advance",
-    Falling_Fist: "Falling_Fist",
-    Stealth_Phantom: "Stealth_Phantom",
-    Thunderous_Dragon: "Thunderous_Dragon",
-    Mortal_Cleave: "Mortal_Cleave",
-    Miasmic_Elytron: "Miasmic_Elytron",
-});
+// const Expert = Object.freeze({
+//     Murderous_Obituary: "Murderous_Obituary",
+//     Crimson_Awe: "Crimson_Awe",
+//     Ethereal_Pursuit: "Ethereal_Pursuit",
+//     Steel_Malice: "Steel_Malice",
+//     Destructive_Advance: "Destructive_Advance",
+//     Falling_Fist: "Falling_Fist",
+//     Stealth_Phantom: "Stealth_Phantom",
+//     Thunderous_Dragon: "Thunderous_Dragon",
+//     Mortal_Cleave: "Mortal_Cleave",
+//     Miasmic_Elytron: "Miasmic_Elytron",
+// });
 
 async function seedCharacters() {
     console.log("Seeding Characters...");
