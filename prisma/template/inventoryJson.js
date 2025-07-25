@@ -81,6 +81,7 @@ const inventory = [
     new item("Thunderous Dragon", 0, 0),
     new item("Mortal Cleave", 0, 0),
     new item("Miasmic Elytron", 0, 0),
+    new item("Toxic Edge", 0, 0),
     // XP
     new item("Trainee Investigator Log", 0, 0),
     new item("Official Investigator Log", 0, 0),
